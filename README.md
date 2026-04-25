@@ -1,12 +1,20 @@
-# My Network Tool
+# 🌐 My Network Tool
 
-Simple web tool that:
-- Shows your public IP
-- Generates secure passwords
+A simple web tool that helps you:
 
-Built with:
-- HTML / CSS / JS
+- 🌍 Check your public IP
+- 🔐 Generate secure passwords
+
+## 🛠 Tech Stack
+- HTML / CSS / JavaScript
 - Docker (nginx)
+- Vercel (deployment)
 
-Live site:
-https://mynetworktool.vercel.app/
+## 🚀 Live Demo
+👉 https://mynetworktool.vercel.app/
+
+## 📦 Run Locally (Docker)
+
+```bash
+docker build -t mynetworktool .
+docker run -p 8080:80 mynetworktool
