@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>My Network Tool</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Network Tool</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"
-  crossorigin="anonymous"></script>
+    <!-- SEO -->
+    <meta name="description" content="Check your IP address, location, ISP and generate secure passwords instantly. Free network tool.">
 
-  <!-- Google verification (when you add it) -->
-  <meta name="google-site-verification" content="atYhq4VEsQjEJUD6sQ9WwsEhsVh1vE9IdQYmzXb81mk" />
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX"
+        crossorigin="anonymous"></script>
 
+    <!-- Google verification -->
+    <meta name="google-site-verification" content="atYhq4VEsQjEJUD6sQ9WwsEhsVh1vE9IdQYmzXb81mk">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-  <div class="card">
-    <h3>What's My IP</h3>
-    <p id="ip">Loading...</p>
-    <button onclick="copyIP()">Copy IP</button>
-    <p id="copyMessage"></p>
-  </div>
+        <div class="card">
+            <h2>🌐 My Network Tool</h2>
 
-  <a href="password.html">
-    <button class="secondary-btn">Go to Password Generator</button>
-  </a>
+            <div class="info">
+                <p><strong>IP:</strong> <span id="ip">Loading...</span></p>
+                <p><strong>Location:</strong> <span id="location"></span></p>
+                <p><strong>ISP:</strong> <span id="isp"></span></p>
+            </div>
 
-</div>
+            <button onclick="copyIP()">Copy IP</button>
+            <p id="copyMessage"></p>
+        </div>
 
-<script src="script.js"></script>
+        <div class="spacer"></div>
 
+        <a href="password.html">
+            <button class="secondary-btn">🔐 Password Generator</button>
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

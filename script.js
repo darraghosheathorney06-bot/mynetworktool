@@ -1,35 +1,55 @@
-function calculate() {
-  let a = parseFloat(document.getElementById("num1").value);
-  let b = parseFloat(document.getElementById("num2").value);
+// ===== GET IP + LOCATION + ISP =====
+async function getIPInfo() {
+    try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
 
-  let result = a + b;
-
-  document.getElementById("result").textContent = "Result: " + result;
+        document.getElementById("ip").innerText = data.ip;
+        document.getElementById("location").innerText =
+            data.city + ", " + data.country_name;
+        document.getElementById("isp").innerText = data.org;
+    } catch (error) {
+        document.getElementById("ip").innerText = "Error";
+        document.getElementById("location").innerText = "";
+        document.getElementById("isp").innerText = "";
+        console.error("IP fetch failed:", error);
+    }
 }
-fetch('https://api.ipify.org?format=json')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('ip').textContent = data.ip;
-  });
-  function copyIP() {
-  let ip = document.getElementById("ip").textContent;
-  navigator.clipboard.writeText(ip);
-  let msg = document.getElementById("copyMessage");
-msg.textContent = "Copied!";
 
-setTimeout(() => {
-  msg.textContent = "";
-}, 1500);
+// Run on page load
+getIPInfo();
+
+
+// ===== COPY IP BUTTON =====
+function copyIP() {
+    const ipText = document.getElementById("ip").innerText;
+
+    navigator.clipboard.writeText(ipText).then(() => {
+        document.getElementById("copyMessage").innerText = "Copied!";
+        setTimeout(() => {
+            document.getElementById("copyMessage").innerText = "";
+        }, 1500);
+    });
 }
+
+
+// ===== SECURE PASSWORD GENERATOR =====
 function generatePassword() {
-  let length = document.getElementById("length").value
-  let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"
-  
-  let password = ""
+    let length = document.getElementById("length").value;
 
-  for (let i = 0; i < length; i++) {
-    password += chars[Math.floor(Math.random() * chars.length)]
-  }
+    // Character set
+    let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
 
-  document.getElementById("passwordResult").textContent = password
+    let password = "";
+
+    // Secure random generator
+    let array = new Uint32Array(length);
+    window.crypto.getRandomValues(array);
+
+    for (let i = 0; i < length; i++) {
+        password += chars[array[i] % chars.length];
+    }
+
+    document.getElementById("passwordResult").textContent = password;
+}
 }
