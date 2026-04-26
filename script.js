@@ -3,16 +3,23 @@
 // =====================
 async function getIPInfo() {
     try {
-        const res = await fetch("https://api.ipify.org?format=json");
-        const ipData = await res.json();
+        const ipRes = await fetch("https://api.ipify.org?format=json");
+        const ipData = await ipRes.json();
 
         const geoRes = await fetch(`https://ipwho.is/${ipData.ip}`);
         const geoData = await geoRes.json();
 
         document.getElementById("ip").textContent = ipData.ip || "N/A";
+
         document.getElementById("location").textContent =
-            (geoData.city ? geoData.city + ", " : "") + (geoData.country || "N/A");
-        document.getElementById("isp").textContent = geoData.connection?.isp || "N/A";
+            (geoData.city ? geoData.city + ", " : "") +
+            (geoData.region ? geoData.region + ", " : "") +
+            (geoData.country || "N/A");
+
+        document.getElementById("isp").textContent =
+            geoData.connection && geoData.connection.isp
+                ? geoData.connection.isp
+                : "N/A";
 
     } catch (err) {
         console.log("ERROR:", err);
