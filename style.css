@@ -49,3 +49,19 @@ button:hover {
 .spacer {
     height: 20px;
 }
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: #8ab4ff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
