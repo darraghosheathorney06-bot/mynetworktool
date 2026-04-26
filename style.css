@@ -72,8 +72,8 @@ button:hover {
 
 /* FOOTER FIX (IMPORTANT PART) */
 .footer {
-  text-align: center;
-  padding: 15px 0;
+  text-align: top;
+  padding: 20px 0;
 }
 
 /* LINKS */
