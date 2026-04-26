@@ -1,19 +1,19 @@
-# 🌐 My Network Tool
+# My Network Tool
 
 A simple web tool that helps you:
 
-- 🌍 Check your public IP
-- 🔐 Generate secure passwords
+- Check your public IP
+- Generate secure passwords
 
-## 🛠 Tech Stack
+## Tech Stack
 - HTML / CSS / JavaScript
 - Docker (nginx)
 - Vercel (deployment)
 
-## 🚀 Live Demo
+## Live Demo
 👉 https://mynetworktool.vercel.app/
 
-## 📦 Run Locally (Docker)
+## Run Locally (Docker)
 
 ```bash
 docker build -t mynetworktool .
