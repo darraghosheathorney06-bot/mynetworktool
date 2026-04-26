@@ -1,67 +1,95 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1220;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* MAIN WRAPPER */
 .container {
-    text-align: center;
-}
-
-.card {
-    background: #1a2238;
-    padding: 30px;
-    border-radius: 12px;
-    width: 300px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.info p {
-    margin: 8px 0;
-    font-size: 14px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.secondary-btn {
-    margin-top: 10px;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-.spacer {
-    height: 20px;
-}
-.footer {
-  margin-top: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
+/* CARD */
+.card {
+  background: #1a2238;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* INFO TEXT */
+.info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* BUTTON (PRIMARY) */
+button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+  margin-top: 10px;
+  background: #334155;
+}
+
+/* SPACING */
+.spacer {
+  height: 20px;
+}
+
+/* FOOTER FIX (IMPORTANT PART) */
+.footer {
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* LINKS */
 .footer a {
   color: #8ab4ff;
   text-decoration: none;
-  font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.75;
+  transition: 0.2s ease;
 }
 
 .footer a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+/* IP / LOCATION / ISP BLOCK SAFETY */
+#ip, #location, #isp {
+  font-weight: bold;
 }
