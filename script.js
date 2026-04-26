@@ -4,8 +4,8 @@
 async function getIPInfo() {
     try {
         // Get IPv4 only
-        const ipRes = await fetch("https://api.ipify.org?format=json");
-        const ipData = await ipRes.json();
+       const geoRes = await fetch(`https://ipwho.is/${ip}`);
+       const geoData = await geoRes.json();
 
         const ip = ipData.ip;
 
@@ -16,9 +16,10 @@ async function getIPInfo() {
         const geoData = await geoRes.json();
 
         document.getElementById("location").textContent =
-            (geoData.city ? geoData.city + ", " : "") + (geoData.country_name || "N/A");
+          (geoData.city ? geoData.city + ", " : "") + (geoData.country || "N/A");
 
-        document.getElementById("isp").textContent = geoData.org || "N/A";
+        document.getElementById("isp").textContent =
+          geoData.connection?.isp || "N/A";
 
     } catch (err) {
         document.getElementById("ip").textContent = "Error";
